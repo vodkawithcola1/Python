@@ -1,0 +1,57 @@
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+print("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors")
+user_choice = input()
+
+choices = [rock,paper,scissors]
+
+if user_choice == '0':
+    user_choice = choices[0]
+elif user_choice == '1':
+    user_choice = choices[1]
+else:
+    user_choice = choices[2]
+
+print(user_choice)
+print("\nComputer chose:")
+
+random_choice = random.choice(choices)
+print(random_choice)
+
+if user_choice == 0 and random_choice == 'scissors':
+    print('You win!')
+elif user_choice == 1 and random_choice == "paper":
+    print('You win!')
+elif user_choice == 2 and random_choice == 'rock':
+    print('You win!')
+elif user_choice == random_choice:
+    print("That's a tie!")
+else:
+    print("You lose!")
